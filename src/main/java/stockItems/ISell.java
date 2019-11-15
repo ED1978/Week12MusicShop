@@ -1,4 +1,4 @@
-package behaviours;
+package stockItems;
 
 public interface ISell {
 

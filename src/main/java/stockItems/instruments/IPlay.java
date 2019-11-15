@@ -1,4 +1,4 @@
-package behaviours;
+package stockItems.instruments;
 
 public interface IPlay {
 
