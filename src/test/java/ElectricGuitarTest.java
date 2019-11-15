@@ -83,9 +83,5 @@ public class ElectricGuitarTest {
         assertEquals(true, guitar.isCaseIncluded());
     }
 
-    @Test
-    public void canSetMarkup() {
-        guitar.setMarkupValue();
-        assertEquals(200.99, guitar.getMarkUpValue(), 0.01);
-    }
+
 }

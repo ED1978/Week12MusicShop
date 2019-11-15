@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class MusicShop {
 
     private ArrayList<ISell> stock;
+    private Double potentialProfit;
 
     public MusicShop(){
         stock = new ArrayList<ISell>();
@@ -14,6 +15,10 @@ public class MusicShop {
 
     public int countStockItems(){
         return this.stock.size();
+    }
+
+    public Double getPotentialProfit(){
+        return this.potentialProfit;
     }
 
     public void addStockItem(ISell item){
@@ -24,6 +29,14 @@ public class MusicShop {
         if(this.stock.contains(item)){
             this.stock.remove(item);
         }
+    }
+
+    public Double calculatePotentialProfit(){
+        Double potentialProfit = 0.00;
+        for (ISell stockItem : stock){
+            potentialProfit += stockItem.calculateMarkUp();
+        }
+        return potentialProfit;
     }
 
 }

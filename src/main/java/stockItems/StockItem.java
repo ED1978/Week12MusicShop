@@ -8,7 +8,6 @@ public abstract class StockItem implements ISell{
     private String material;
     private Double wholesalePrice;
     private Double retailPrice;
-    protected Double markUpValue;
 
     public StockItem(String make, String model, String type, String material, Double wholesalePrice, Double retailPrice){
         this.make = make;
@@ -50,14 +49,6 @@ public abstract class StockItem implements ISell{
 
     public void setRetailPrice(Double price){
         this.retailPrice = price;
-    }
-
-    public Double getMarkUpValue(){
-        return this.markUpValue;
-    }
-
-    public  void setMarkupValue(){
-        this.markUpValue = calculateMarkUp();
     }
 
     public Double calculateMarkUp(){
