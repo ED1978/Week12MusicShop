@@ -2,7 +2,7 @@ package stockItems;
 
 import behaviours.ISell;
 
-public abstract class StockItem  {
+public abstract class StockItem implements ISell{
 
     private String make;
     private String model;
@@ -10,6 +10,7 @@ public abstract class StockItem  {
     private String material;
     private Double wholesalePrice;
     private Double retailPrice;
+    protected Double markUpValue;
 
     public StockItem(String make, String model, String type, String material, Double wholesalePrice, Double retailPrice){
         this.make = make;
@@ -44,12 +45,25 @@ public abstract class StockItem  {
         return this.retailPrice;
     }
 
+
     public void setWholesalePrice(Double price){
         this.wholesalePrice = price;
     }
 
     public void setRetailPrice(Double price){
         this.retailPrice = price;
+    }
+
+    public Double getMarkUpValue(){
+        return this.markUpValue;
+    }
+
+    public  void setMarkupValue(){
+        this.markUpValue = calculateMarkUp();
+    }
+
+    public Double calculateMarkUp(){
+        return getRetailPrice() - getWholesalePrice();
     }
 
 }
