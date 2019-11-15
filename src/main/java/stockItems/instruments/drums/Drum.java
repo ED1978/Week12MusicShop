@@ -7,8 +7,8 @@ public class Drum extends Instrument {
     public String diameter;
     public String depth;
 
-    public Drum(String make, String model, String type, String material, Double wholesalePrice, Double retailPrice, String sound, String diameter, String depth){
-        super(make, model, type, material, wholesalePrice, retailPrice, sound);
+    public Drum(String make, String model, String type, String material, Double wholesalePrice, Double retailPrice, String sound, String diameter, String depth, Boolean isCaseIncluded){
+        super(make, model, type, material, wholesalePrice, retailPrice, sound, isCaseIncluded);
         this.diameter = diameter;
         this.depth = depth;
     }

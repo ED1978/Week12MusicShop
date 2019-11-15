@@ -64,4 +64,22 @@ public class ElectricGuitarTest {
     public void canGetNumberOfStrings() {
         assertEquals(6, guitar.getNumberOfStrings());
     }
+
+    @Test
+    public void isCaseIncluded() {
+        assertEquals(true, guitar.isCaseIncluded());
+    }
+
+    @Test
+    public void canSetIsCaseIncludedFalse() {
+        guitar.setCaseIncludedFalse();
+        assertEquals(false, guitar.isCaseIncluded());
+    }
+
+    @Test
+    public void canSetIsCaseIncludedTrue() {
+        guitar.setCaseIncludedFalse();
+        guitar.setCaseIncludedTrue();
+        assertEquals(true, guitar.isCaseIncluded());
+    }
 }
