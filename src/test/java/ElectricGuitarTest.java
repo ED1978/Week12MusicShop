@@ -54,4 +54,9 @@ public class ElectricGuitarTest {
         guitar.setRetailPrice(299.99);
         assertEquals(299.99, guitar.getRetailPrice(), 0.01);
     }
+
+    @Test
+    public void canPlay() {
+        assertEquals("CLAAANG", guitar.play());
+    }
 }
