@@ -1,4 +1,6 @@
 package stockItems.instruments;
 
-public class Drum {
+public class Drum extends Instrument {
+
+
 }

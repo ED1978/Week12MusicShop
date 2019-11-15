@@ -1,4 +1,4 @@
 package stockItems.instruments;
 
-public class Stringed {
+public class Stringed extends Instrument {
 }

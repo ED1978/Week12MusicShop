@@ -1,4 +1,6 @@
 package stockItems.accessories;
 
-public class DrumSticks {
+import stockItems.StockItem;
+
+public class DrumSticks extends StockItem {
 }

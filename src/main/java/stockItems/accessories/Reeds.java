@@ -1,4 +1,6 @@
 package stockItems.accessories;
 
-public class Reeds {
+import stockItems.StockItem;
+
+public class Reeds extends StockItem {
 }

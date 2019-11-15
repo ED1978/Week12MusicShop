@@ -1,4 +1,4 @@
 package stockItems.instruments;
 
-public class Wind {
+public class Wind extends Instrument {
 }

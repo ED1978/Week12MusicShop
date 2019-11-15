@@ -1,4 +1,7 @@
 package stockItems.instruments;
 
-public class Instrument {
+import behaviours.IPlay;
+import stockItems.StockItem;
+
+public abstract class Instrument extends StockItem implements IPlay {
 }

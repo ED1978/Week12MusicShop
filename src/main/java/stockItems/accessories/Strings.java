@@ -1,4 +1,6 @@
 package stockItems.accessories;
 
-public class Strings {
+import stockItems.StockItem;
+
+public class Strings extends StockItem {
 }
