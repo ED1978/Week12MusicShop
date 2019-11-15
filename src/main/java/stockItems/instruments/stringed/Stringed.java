@@ -11,5 +11,9 @@ public class Stringed extends Instrument {
         this.numberOfStrings = numberOfStrings;
     }
 
+    public int getNumberOfStrings(){
+        return this.numberOfStrings;
+    }
+
 
 }

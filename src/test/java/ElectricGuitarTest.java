@@ -59,4 +59,9 @@ public class ElectricGuitarTest {
     public void canPlay() {
         assertEquals("CLAAANG", guitar.play());
     }
+
+    @Test
+    public void canGetNumberOfStrings() {
+        assertEquals(6, guitar.getNumberOfStrings());
+    }
 }
