@@ -12,12 +12,9 @@ public abstract class Instrument extends StockItem implements IPlay {
         this.sound = sound;
     }
 
-    public String getSound(){
-        return this.sound;
-    }
 
     public String play(){
-        return getSound();
+        return this.sound;
     }
 
 }
