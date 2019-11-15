@@ -2,5 +2,54 @@ package stockItems;
 
 import behaviours.ISell;
 
-public abstract class StockItem implements ISell {
+public abstract class StockItem  {
+
+    private String make;
+    private String model;
+    private String type;
+    private String material;
+    private Double wholesalePrice;
+    private Double retailPrice;
+
+    public StockItem(String make, String model, String type, String material, Double wholesalePrice, Double retailPrice){
+        this.make = make;
+        this.model = model;
+        this.type = type;
+        this.material = material;
+        this.wholesalePrice = wholesalePrice;
+        this.retailPrice = retailPrice;
+    }
+
+    public String getMake(){
+        return this.make;
+    }
+
+    public String getModel(){
+        return this.model;
+    }
+
+    public String getType(){
+        return this.type;
+    }
+
+    public String getMaterial(){
+        return this.material;
+    }
+
+    public Double getWholesalePrice(){
+        return this.wholesalePrice;
+    }
+
+    public Double getRetailPrice(){
+        return this.retailPrice;
+    }
+
+    public void setWholesalePrice(Double price){
+        this.wholesalePrice = price;
+    }
+
+    public void setRetailPrice(Double price){
+        this.retailPrice = price;
+    }
+
 }
