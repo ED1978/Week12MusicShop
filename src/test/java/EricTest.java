@@ -12,7 +12,6 @@ public class EricTest {
     Eric eric;
     ElectricGuitar guitar;
     Clarinet clarinet;
-    Wallet wallet;
 
     @Before
     public void before(){
@@ -41,8 +40,8 @@ public class EricTest {
     }
 
     @Test
-    public void canFillWallet() {
+    public void canFillWalletWithNotes() {
         eric.fillWalletWithNotes();
-        assertEquals(345.00, eric.wallet.getNotesValue(), 0.01);
+        assertEquals(345.00, eric.wallet.getTotalValue(), 0.01);
     }
 }

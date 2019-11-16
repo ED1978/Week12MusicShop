@@ -19,21 +19,21 @@ public class WalletTest {
     @Test
     public void canAddNote() {
         wallet.addNote(NoteType.FIFTY);
-        assertEquals(1, wallet.getNumberOfNotes());
+        assertEquals(1, wallet.getAmountOfCash());
     }
 
-//    @Test
-//    public void canAddCoin() {
-//        wallet.addCoin(CoinType.FIFTYPENCE);
-//        assertEquals(1, wallet.getNumberOfNotes());
-//    }
-//
-//    @Test
-//    public void canGetTotalValue() {
-//        wallet.addNote(NoteType.FIVE);
-//        wallet.addNote(NoteType.TEN);
-//        wallet.addCoin(CoinType.FIFTYPENCE);
-//        assertEquals(15.50, wallet.getTotalValue(), 0.01);
-//    }
+    @Test
+    public void canAddCoin() {
+        wallet.addCoin(CoinType.FIFTYPENCE);
+        assertEquals(1, wallet.getAmountOfCash());
+    }
+
+    @Test
+    public void canGetTotalValue() {
+        wallet.addNote(NoteType.FIVE);
+        wallet.addNote(NoteType.TEN);
+        wallet.addCoin(CoinType.FIFTYPENCE);
+        assertEquals(15.50, wallet.getTotalValue(), 0.01);
+    }
 
 }

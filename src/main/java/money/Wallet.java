@@ -1,6 +1,7 @@
 package money;
 
 import money.coins.Coin;
+import money.coins.CoinType;
 import money.notes.BankNote;
 import money.notes.NoteType;
 
@@ -8,30 +9,28 @@ import java.util.ArrayList;
 
 public class Wallet {
 
-    private ArrayList<BankNote> notes;
-    private ArrayList<Coin> coins;
+    private ArrayList<Money> cash;
 
     public Wallet(){
-        this.notes = new ArrayList<BankNote>();
-        this.coins = new ArrayList<Coin>();
+        this.cash = new ArrayList<Money>();
     }
 
-    public int getNumberOfNotes(){
-        return this.notes.size();
+    public int getAmountOfCash(){
+        return this.cash.size();
     }
 
     public void addNote(NoteType note){
         BankNote noteToAdd =  new BankNote(note);
-        this.notes.add(noteToAdd);
+        this.cash.add(noteToAdd);
     }
-//    public void addCoin(Coin coin){
-//        Coin coinToAdd = new Coin(coin);
-//        this.coins.add(coinToAdd);
-//    }
+    public void addCoin(CoinType coin){
+        Coin coinToAdd = new Coin(coin);
+        this.cash.add(coinToAdd);
+    }
 
-    public Double getNotesValue(){
+    public Double getTotalValue(){
         Double totalValue = 0.00;
-        for (BankNote item : notes){
+        for (Money item : cash){
             totalValue += item.getValue();
         }
         return totalValue;
