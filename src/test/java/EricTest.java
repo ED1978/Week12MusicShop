@@ -60,6 +60,6 @@ public class EricTest {
     @Test
     public void canFillWallet() {
         eric.fillWallet();
-        assertEquals(355.00, eric.wallet.getTotalValue(), 0.01);
+        assertEquals(345.00, eric.wallet.getTotalValue(), 0.01);
     }
 }
