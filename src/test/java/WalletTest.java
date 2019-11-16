@@ -32,7 +32,8 @@ public class WalletTest {
     public void canGetTotalValue() {
         wallet.addNote(NoteType.FIVE);
         wallet.addNote(NoteType.TEN);
-        assertEquals(15.00, wallet.getTotalValue(), 0.01);
+        wallet.addCoin(CoinType.FIFTYPENCE);
+        assertEquals(15.50, wallet.getTotalValue(), 0.01);
     }
 
 }
