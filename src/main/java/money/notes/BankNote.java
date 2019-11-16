@@ -1,31 +1,12 @@
 package money.notes;
 
-public class BankNote {
+import money.IPay;
+import money.Money;
 
-    public NoteType noteType;
-    private Double value;
-    private String note;
+public class BankNote extends Money {
 
-    public BankNote(NoteType noteType){
-        this.noteType = noteType;
-        this.value = getValueFromEnum();
-        this.note = noteType.toString();
+    public BankNote(IPay noteType){
+        super(noteType, "Paper");
     }
-
-    public NoteType getNoteType(){
-        return this.noteType;
-    }
-
-    public String getNote(){
-        return this.note;
-    }
-
-    public Double getValueFromEnum(){
-        return this.noteType.getValue();
-    }
-
-
-
-
 
 }

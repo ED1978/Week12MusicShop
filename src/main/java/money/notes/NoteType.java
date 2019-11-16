@@ -1,6 +1,8 @@
 package money.notes;
 
-public enum NoteType {
+import money.IPay;
+
+public enum NoteType implements IPay {
 
     FIVE(5.00),
     TEN(10.00),

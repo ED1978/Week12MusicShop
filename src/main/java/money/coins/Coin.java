@@ -1,7 +1,12 @@
 package money.coins;
 
-public class Coin {
+import money.IPay;
+import money.Money;
 
+public class Coin extends Money {
 
+    public Coin(IPay coinType){
+        super(coinType, "Metal");
+    }
 
 }

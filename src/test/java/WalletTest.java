@@ -1,5 +1,4 @@
 import money.Wallet;
-import money.notes.BankNote;
 import money.notes.NoteType;
 import org.junit.Before;
 import org.junit.Test;

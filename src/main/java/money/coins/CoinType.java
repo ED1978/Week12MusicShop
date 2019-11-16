@@ -1,6 +1,8 @@
 package money.coins;
 
-public enum CoinType {
+import money.IPay;
+
+public enum CoinType implements IPay {
 
     ONEPENCE(0.01),
     TWOPENC(0.02),

@@ -7,25 +7,25 @@ import java.util.ArrayList;
 
 public class Wallet {
 
-    private ArrayList<BankNote> wallet;
+    private ArrayList<IPay> wallet;
 
     public Wallet(){
-        this.wallet = new ArrayList<BankNote>();
+        this.wallet = new ArrayList<IPay>();
     }
 
     public int getNumberOfNotes(){
         return this.wallet.size();
     }
 
-    public void addNote(NoteType note){
-        BankNote noteToAdd = new BankNote(note);
+    public void addNote(IPay note){
+        IPay noteToAdd = new BankNote(note);
         this.wallet.add(noteToAdd);
     }
 
     public Double getTotalValue(){
         Double totalValue = 0.00;
-        for (BankNote note : wallet){
-            totalValue += note.getValueFromEnum();
+        for (IPay item : wallet){
+            totalValue += item.getValue();
         }
         return totalValue;
     }
