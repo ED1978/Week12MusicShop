@@ -1,5 +1,6 @@
 package people;
 
+import money.Wallet;
 import stockItems.ISell;
 
 import java.util.ArrayList;
@@ -7,12 +8,12 @@ import java.util.ArrayList;
 public class Customer {
 
     private String name;
-    private Double wallet;
+    private Wallet wallet;
     private ArrayList<ISell> purchases;
 
     public Customer(String name, Double wallet){
         this.name = name;
-        this.wallet = wallet;
+        this.wallet = new Wallet();
         purchases = new ArrayList<ISell>();
     }
 
@@ -20,17 +21,17 @@ public class Customer {
         return this.name;
     }
 
-    public Double getFunds(){
-        return this.wallet;
-    }
+//    public Double getFunds(){
+//        return this.wallet;
+//    }
 
-    public void addFunds(Double amount){
-        this.wallet += amount;
-    }
+//    public void addFunds(Double amount){
+//        this.wallet += amount;
+//    }
 
-    public void removeFunds(Double amount){
-        this.wallet -= amount;
-    }
+//    public void removeFunds(Double amount){
+//        this.wallet -= amount;
+//    }
 
     public int getPurchasesLength(){
         return this.purchases.size();

@@ -24,22 +24,22 @@ public class EricTest {
         assertEquals("Eric", eric.getName());
     }
 
-    @Test
-    public void canGetFunds() {
-        assertEquals(1000.00, eric.getFunds(), 0.01);
-    }
+//    @Test
+//    public void canGetFunds() {
+//        assertEquals(1000.00, eric.getFunds(), 0.01);
+//    }
 
-    @Test
-    public void canAddFunds() {
-        eric.addFunds(20.99);
-        assertEquals(1020.99, eric.getFunds(), 0.01);
-    }
+//    @Test
+//    public void canAddFunds() {
+//        eric.addFunds(20.99);
+//        assertEquals(1020.99, eric.getFunds(), 0.01);
+//    }
 
-    @Test
-    public void canRemoveFunds() {
-        eric.removeFunds(20.00);
-        assertEquals(980.00, eric.getFunds(), 0.01);
-    }
+//    @Test
+//    public void canRemoveFunds() {
+//        eric.removeFunds(20.00);
+//        assertEquals(980.00, eric.getFunds(), 0.01);
+//    }
 
     @Test
     public void canAddPurchase(){
