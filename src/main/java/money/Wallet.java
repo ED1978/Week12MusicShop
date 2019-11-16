@@ -1,5 +1,6 @@
 package money;
 
+import money.coins.Coin;
 import money.notes.BankNote;
 import money.notes.NoteType;
 
@@ -20,6 +21,10 @@ public class Wallet {
     public void addNote(IPay note){
         IPay noteToAdd = new BankNote(note);
         this.wallet.add(noteToAdd);
+    }
+    public void addCoin(IPay coin){
+        IPay coinToAdd = new Coin(coin);
+        this.wallet.add(coinToAdd);
     }
 
     public Double getTotalValue(){

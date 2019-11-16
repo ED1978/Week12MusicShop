@@ -1,4 +1,5 @@
 import money.Wallet;
+import money.coins.CoinType;
 import money.notes.NoteType;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,6 +19,12 @@ public class WalletTest {
     @Test
     public void canAddNote() {
         wallet.addNote(NoteType.FIFTY);
+        assertEquals(1, wallet.getNumberOfNotes());
+    }
+
+    @Test
+    public void canAddCoin() {
+        wallet.addCoin(CoinType.FIFTYPENCE);
         assertEquals(1, wallet.getNumberOfNotes());
     }
 
