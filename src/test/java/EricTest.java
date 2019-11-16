@@ -40,8 +40,20 @@ public class EricTest {
     }
 
     @Test
-    public void canFillWalletWithNotes() {
-        eric.fillWalletWithNotes();
+    public void caAddNotesNotes() {
+        eric.addNotes();
         assertEquals(345.00, eric.wallet.getTotalValue(), 0.01);
+    }
+
+    @Test
+    public void canAddCoins() {
+        eric.addCoins();
+        assertEquals(15.40, eric.wallet.getTotalValue(), 0.01);
+    }
+
+    @Test
+    public void canAddCashToWallet() {
+        eric.addCashToWallet();
+        assertEquals(360.40, eric.wallet.getTotalValue(), 0.01);
     }
 }

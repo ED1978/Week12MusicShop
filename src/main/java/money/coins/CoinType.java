@@ -5,7 +5,7 @@ import money.IPay;
 public enum CoinType implements IPay {
 
     ONEPENCE(0.01),
-    TWOPENC(0.02),
+    TWOPENCE(0.02),
     FIVEPENCE(0.05),
     TENPENCE(0.10),
     TWENTYPENCE(0.20),

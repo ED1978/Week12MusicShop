@@ -2,12 +2,14 @@ package people;
 
 import money.IPay;
 import money.Wallet;
+import money.coins.CoinType;
 import money.notes.BankNote;
 import money.notes.NoteType;
 import stockItems.ISell;
 
 import java.util.ArrayList;
 
+import static money.coins.CoinType.*;
 import static money.notes.NoteType.*;
 
 public class Customer {
@@ -40,31 +42,48 @@ public class Customer {
         }
     }
 
-    public void fillWalletWithNotes(){
+    public void addCashToWallet(){
+        addNotes();
+        addCoins();
+    }
+
+    public void addNotes(){
         for (NoteType note : NoteType.values()){
-            int i = 1;
-            int notesToAdd = numberOfNotesToAdd(note);
-            while (i <= notesToAdd){
+            int i = 0;
+            int notesToAdd = amountOfCashToAdd(note);
+            while (i < notesToAdd){
                 wallet.addNote(note);
                 i ++;
             }
         }
     }
 
-    public int numberOfNotesToAdd(NoteType note){
-        int numberOfNotes = 0;
-
-        if (FIVE.equals(note)) {
-            numberOfNotes = 9;
-        } else if (TEN.equals(note)) {
-            numberOfNotes = 10;
-        } else if (TWENTY.equals(note)) {
-            numberOfNotes = 5;
-        } else if (FIFTY.equals(note)) {
-            numberOfNotes = 2;
+    public void addCoins(){
+        for (CoinType coin :CoinType.values()){
+            int i = 0;
+            int coinsToAdd = amountOfCashToAdd(coin);
+            while (i < coinsToAdd){
+                wallet.addCoin(coin);
+                i ++;
+            }
         }
-        return numberOfNotes;
     }
 
-
+    public int amountOfCashToAdd(IPay cash){
+        int amountOfCash = 0;
+        if ( (TEN.equals(cash)) || (TWOPENCE.equals(cash)) || (TENPENCE.equals(cash)) || (ONEPOUND.equals(cash)) ) {
+            amountOfCash = 10;
+        } else if ( (TWENTY.equals(cash)) || (TWENTYPENCE.equals(cash)) ) {
+            amountOfCash = 5;
+        } else if ( (ONEPENCE.equals(cash)) || (FIVEPENCE.equals(cash)) ) {
+            amountOfCash = 20;
+        } else if (FIFTYPENCE.equals(cash)) {
+            amountOfCash = 4;
+        } else if (FIFTY.equals(cash)) {
+            amountOfCash = 2;
+        } else if (FIVE.equals(cash)) {
+            amountOfCash = 9;
+        }
+        return amountOfCash;
+    }
 }
