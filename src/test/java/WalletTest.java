@@ -28,4 +28,5 @@ public class WalletTest {
         wallet.addNote(NoteType.TEN);
         assertEquals(15.00, wallet.getTotalValue(), 0.01);
     }
+
 }

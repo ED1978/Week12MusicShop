@@ -1,3 +1,4 @@
+import money.Wallet;
 import org.junit.Before;
 import org.junit.Test;
 import people.customers.Eric;
@@ -11,6 +12,7 @@ public class EricTest {
     Eric eric;
     ElectricGuitar guitar;
     Clarinet clarinet;
+    Wallet wallet;
 
     @Before
     public void before(){
@@ -53,5 +55,11 @@ public class EricTest {
         eric.addPurchase(guitar);
         eric.removePurchase(clarinet);
         assertEquals(1, eric.getPurchasesLength());
+    }
+
+    @Test
+    public void canFillWallet() {
+        eric.fillWallet();
+        assertEquals(355.00, eric.wallet.getTotalValue(), 0.01);
     }
 }
