@@ -2,7 +2,6 @@ package money.notes;
 
 public enum NoteType {
 
-    ONE(1.00),
     FIVE(5.00),
     TEN(10.00),
     TWENTY(20.00),

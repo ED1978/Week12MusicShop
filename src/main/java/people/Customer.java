@@ -55,10 +55,6 @@ public class Customer {
 
             switch(note) {
 
-                case ONE:
-                    numberOfNotes = 10;
-                    break;
-
                 case FIVE:
                     numberOfNotes = 9;
                     break;
