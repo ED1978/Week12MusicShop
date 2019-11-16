@@ -17,10 +17,6 @@ public class MusicShop {
         return this.stock.size();
     }
 
-    public Double getPotentialProfit(){
-        return this.potentialProfit;
-    }
-
     public void addStockItem(ISell item){
         this.stock.add(item);
     }
