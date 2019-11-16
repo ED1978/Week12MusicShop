@@ -5,7 +5,7 @@ import money.Money;
 
 public class Coin extends Money {
 
-    public Coin(IPay coinType){
+    public Coin(CoinType coinType){
         super(coinType, "Metal");
     }
 

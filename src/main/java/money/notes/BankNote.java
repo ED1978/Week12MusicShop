@@ -5,7 +5,7 @@ import money.Money;
 
 public class BankNote extends Money {
 
-    public BankNote(IPay noteType){
+    public BankNote(NoteType noteType){
         super(noteType, "Paper");
     }
 

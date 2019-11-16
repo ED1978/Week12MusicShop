@@ -2,7 +2,7 @@ package money;
 
 import money.notes.NoteType;
 
-public abstract class Money implements IPay {
+public abstract class Money{
 
     public IPay moneyType;
     private Double value;

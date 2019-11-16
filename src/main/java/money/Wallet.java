@@ -8,28 +8,30 @@ import java.util.ArrayList;
 
 public class Wallet {
 
-    private ArrayList<IPay> wallet;
+    private ArrayList<BankNote> notes;
+    private ArrayList<Coin> coins;
 
     public Wallet(){
-        this.wallet = new ArrayList<IPay>();
+        this.notes = new ArrayList<BankNote>();
+        this.coins = new ArrayList<Coin>();
     }
 
     public int getNumberOfNotes(){
-        return this.wallet.size();
+        return this.notes.size();
     }
 
-    public void addNote(IPay note){
-        IPay noteToAdd = new BankNote(note);
-        this.wallet.add(noteToAdd);
+    public void addNote(NoteType note){
+        BankNote noteToAdd =  new BankNote(note);
+        this.notes.add(noteToAdd);
     }
-    public void addCoin(IPay coin){
-        IPay coinToAdd = new Coin(coin);
-        this.wallet.add(coinToAdd);
-    }
+//    public void addCoin(Coin coin){
+//        Coin coinToAdd = new Coin(coin);
+//        this.coins.add(coinToAdd);
+//    }
 
-    public Double getTotalValue(){
+    public Double getNotesValue(){
         Double totalValue = 0.00;
-        for (IPay item : wallet){
+        for (BankNote item : notes){
             totalValue += item.getValue();
         }
         return totalValue;

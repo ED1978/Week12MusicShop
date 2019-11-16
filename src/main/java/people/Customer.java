@@ -1,10 +1,14 @@
 package people;
 
+import money.IPay;
 import money.Wallet;
+import money.notes.BankNote;
 import money.notes.NoteType;
 import stockItems.ISell;
 
 import java.util.ArrayList;
+
+import static money.notes.NoteType.*;
 
 public class Customer {
 
@@ -12,7 +16,7 @@ public class Customer {
     public Wallet wallet;
     private ArrayList<ISell> purchases;
 
-    public Customer(String name, Double wallet){
+    public Customer(String name){
         this.name = name;
         this.wallet = new Wallet();
         purchases = new ArrayList<ISell>();
@@ -21,18 +25,6 @@ public class Customer {
     public String getName(){
         return this.name;
     }
-
-//    public Double getFunds(){
-//        return this.wallet;
-//    }
-
-//    public void addFunds(Double amount){
-//        this.wallet += amount;
-//    }
-
-//    public void removeFunds(Double amount){
-//        this.wallet -= amount;
-//    }
 
     public int getPurchasesLength(){
         return this.purchases.size();
@@ -48,36 +40,30 @@ public class Customer {
         }
     }
 
-    public void fillWallet(){
+    public void fillWalletWithNotes(){
         for (NoteType note : NoteType.values()){
-
-            int numberOfNotes = 0;
-
-            switch(note) {
-
-                case FIVE:
-                    numberOfNotes = 9;
-                    break;
-
-                case TEN:
-                    numberOfNotes = 10;
-                    break;
-
-                case TWENTY:
-                    numberOfNotes = 5;
-                    break;
-
-                case FIFTY:
-                    numberOfNotes = 2;
-                    break;
-            }
             int i = 1;
-            while (i <= numberOfNotes){
+            int notesToAdd = numberOfNotesToAdd(note);
+            while (i <= notesToAdd){
                 wallet.addNote(note);
                 i ++;
             }
-
         }
+    }
+
+    public int numberOfNotesToAdd(NoteType note){
+        int numberOfNotes = 0;
+
+        if (FIVE.equals(note)) {
+            numberOfNotes = 9;
+        } else if (TEN.equals(note)) {
+            numberOfNotes = 10;
+        } else if (TWENTY.equals(note)) {
+            numberOfNotes = 5;
+        } else if (FIFTY.equals(note)) {
+            numberOfNotes = 2;
+        }
+        return numberOfNotes;
     }
 
 
